@@ -1,6 +1,7 @@
 # Ord23e
 
-**TODO: Add description**
+- [オフラインリアルタイムどう書くE23 - 横浜へなちょこプログラミング勉強会 | Doorkeeper](https://yhpg.doorkeeper.jp/events/71800)
+- [コッホっぽい曲線 2018.4.7](http://nabetani.sakura.ne.jp/hena/orde23nokoch/)
 
 ## Installation
 
