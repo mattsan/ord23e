@@ -10,40 +10,40 @@ defmodule Ord23e do
     if total_length < index do
       "x"
     else
-      {_, _, d} =
+      {_, _, direction} =
         rules
-        |> Enum.reduce({index - 1, total_length, 0}, fn rule, {index, length, d} ->
+        |> Enum.reduce({index - 1, total_length, 0}, fn rule, {index, length, direction} ->
           case rule do
             ?a ->
               length = div(length, 4)
 
-              d =
+              direction =
                 case div(index, length) do
-                  0 -> d
-                  1 -> d + 1
-                  2 -> d - 1
-                  3 -> d
+                  0 -> direction
+                  1 -> direction + 1
+                  2 -> direction - 1
+                  3 -> direction
                 end
 
-              {rem(index, length), length, d}
+              {rem(index, length), length, direction}
 
             ?b ->
               length = div(length, 5)
 
-              d =
+              direction =
                 case div(index, length) do
-                  0 -> d
-                  1 -> d + 1
-                  2 -> d
-                  3 -> d - 1
-                  4 -> d
+                  0 -> direction
+                  1 -> direction + 1
+                  2 -> direction
+                  3 -> direction - 1
+                  4 -> direction
                 end
 
-              {rem(index, length), length, d}
+              {rem(index, length), length, direction}
           end
         end)
 
-      case rem(d, 6) do
+      case rem(direction, 6) do
         -4 -> "-"
         -3 -> "0"
         -2 -> "+"
